@@ -1,4 +1,6 @@
-
+# ViveHololens
+Expérimenter la réalité partagée en combinant le casque de réalité augmentée Microsoft Hololens et le casque de réalité virtuelle HTC Vive.
+## Utilisation
 Il est nécessaire d'utiliser la version de Unity 5.5.2f1, vous pouvez la télécharger à cette adresse https://unity3d.com/fr/get-unity/download/archive
 
 Une fois le projet ouvert avec Unity, une fenêtre pop-up va s'ouvrir pour vous demander de mettre SteamVR à jour, ne le faites surtout pas, ce paquet Unity ayant été modifié pour que la démo fonctionne. Je parle ici du paquet Unity et non du programme SteamVR complémentaire à Steam, pour lequel vous pouvez, sans autre faire les mises à jour.
@@ -12,7 +14,7 @@ Avant de pouvoir compiler ou utiliser le jeu, vous devrez en premier lieu config
 
 Sélectionnez "Multiplayer" puis "Go to Dashboard" vous serez alors emmené sur la page web correspondant à votre Unity Project ID. Il vous sera demandé d'indiquer le nombre de joueur, rentrez deux joueurs, puis cliquez sur le bouton "Save". Retournez ensuite sur Unity et cliquez sur le bouton "Refresh Configuration" et assurez-vous que le nombre de joueur ait été rentré correctement. 
 
-## Execution  - HoloLens
+## Exécution  - HoloLens
 Pour déployer une application Unity sur l'HoloLens, il vous faudra indiquer à Unity que vous souhaitez compiler votre projet pour un casque HoloLens. Pour se faire allez dans "File → Build Settings → Windows Store".
 <p align="center"> 
 <img src="https://raw.githubusercontent.com/Gabrielm1/ViveHololens/master/img/deploiement.png">
@@ -28,4 +30,5 @@ Cliquez sur le bouton "Build", cela ouvrira une fenêtre et vous demandera dans 
 <p align="center"> 
 <img height="370"  src="https://raw.githubusercontent.com/Gabrielm1/ViveHololens/master/img/deploiement3.png">
 </p>
+
 
