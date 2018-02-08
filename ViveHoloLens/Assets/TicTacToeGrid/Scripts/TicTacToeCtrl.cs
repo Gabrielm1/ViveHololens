@@ -65,6 +65,7 @@ public class TicTacToeCtrl : NetworkBehaviour
             if (IsEquality())
             {
                 gameOver = true;
+                ShowArrow();
                 EndOfTheGame("Equality, there is no winner");
             }
         }
@@ -78,24 +79,46 @@ public class TicTacToeCtrl : NetworkBehaviour
             string message = ("playerA" == Utils.HoloPlayer) ? "You win" : "You loose";
             CmdDrawLine(startCell, endCell, message);
             scoreA++;
+            UpdateScore(scoreA, scoreB);
+            ShowArrow();
         }
         else if (val == -3)
         {
             string message = ("playerB" == Utils.HoloPlayer) ? "You win" : "You loose";
             CmdDrawLine(startCell, endCell, message);
             scoreB++;
+            UpdateScore(scoreA, scoreB);
+            ShowArrow();
         }
         return gameOver;
     }
+    private void ShowArrow()
+    {
+        GameObject[] ctrls = GameObject.FindGameObjectsWithTag("ViveController");
+        foreach (GameObject allow in ctrls)
+        {
+            allow.GetComponent<AllowToDraw>().ShowArrow();
+        }
+    }
 
-    [Command]
-    private void CmdUpdateScore()
+    [Server]
+    private void UpdateScore(int sA, int sB)
+    {
+        RpcUpdateScore(sA, sB);
+    }
+
+
+    [ClientRpc]
+    private void RpcUpdateScore(int sA, int sB)
     {
         foreach (GameObject txt in scoreViews)
         {
-            txt.GetComponent<TextMesh>().text = "Score : " + scoreA + " : " + scoreB;
+            txt.GetComponent<TextMesh>().text = "Score : " + sA + " : " + sB;
         }
     }
+
+
+
 
     private bool IsEquality()
     {
@@ -143,7 +166,7 @@ public class TicTacToeCtrl : NetworkBehaviour
     [ClientRpc]
     private void RpcEnOfTheGame(string msg)
     {
-        CmdUpdateScore();
+
         if (Utils.IsVR)
         {
             PlayerWin(!(msg == "You loose") ? "Vive player looses" : "Vive player wins");

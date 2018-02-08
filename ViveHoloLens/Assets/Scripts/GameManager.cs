@@ -54,8 +54,12 @@ public class GameManager : NetworkBehaviour
                 }
                 controller.gameOver = false;
             }
+            playerAController.GetComponent<AllowToDraw>().HideArrow();
+            playerBController.GetComponent<AllowToDraw>().HideArrow();
+
             playerAController.GetComponent<AllowToDraw>().PlayerTurn = true;
             playerBController.GetComponent<AllowToDraw>().PlayerTurn = true;
+
         }
     }
 

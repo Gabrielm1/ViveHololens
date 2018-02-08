@@ -5,6 +5,7 @@
 // 
 // AUTHOR      : GABRIEL Michel I-3
 // ------------------------------------
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,13 +13,13 @@ using UnityEngine;
 public class AllowToDraw : MonoBehaviour
 {
     [HideInInspector]
-    public bool CanDraw { get; set; }
+    public bool CanDraw { get; set; } // Set to true when the player can draw
 
     [HideInInspector]
     public bool PlayerTurn { get; set; }
 
     [HideInInspector]
-    public bool HasDrawn { get; set; }
+    public bool HasDrawn { get; set; } // 
 
     private SteamVR_TrackedObject trackedObj;
 
@@ -65,6 +66,24 @@ public class AllowToDraw : MonoBehaviour
         }
     }
 
+    public void HideMessage()
+    {
+        if (!HoloLensPlayer)
+            transform.GetChild(2).gameObject.SetActive(false);
+    }
+
+    public void HideArrow()
+    {
+        if (!HoloLensPlayer)
+            transform.GetChild(1).gameObject.SetActive(false);
+    }
+
+    public void ShowArrow()
+    {
+        if (!HoloLensPlayer)
+            transform.GetChild(1).gameObject.SetActive(true);
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -92,6 +111,14 @@ public class AllowToDraw : MonoBehaviour
             HasDrawn = false;
         }
         CanDraw = false;
+    }
+
+
+    public void SetHoloLensPlayer(bool value)
+    {
+        HoloLensPlayer = value;
+        otherPlayerController.transform.GetChild(2).gameObject.SetActive(true);
+        Utils.HoloPlayer = player;
     }
 
 }

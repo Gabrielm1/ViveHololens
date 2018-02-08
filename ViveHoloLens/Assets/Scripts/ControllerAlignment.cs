@@ -29,8 +29,7 @@ public class ControllerAlignment : MonoBehaviour
     {
         if (alignmentManager.CurrentlyAligning)
         {
-            GetComponent<AllowToDraw>().HoloLensPlayer = true;
-            Utils.HoloPlayer = GetComponent<AllowToDraw>().player;
+            GetComponent<AllowToDraw>().SetHoloLensPlayer(true);
             alignmentManager.ControllerClicked(this.transform);
         }
     }

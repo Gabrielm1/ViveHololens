@@ -133,9 +133,9 @@ public class AlignmentManager : NetworkBehaviour
     [Command]
     private void CmdInitializeTicTacGrid(Vector3 position, float rotation)
     {
-        ticTac = Instantiate(ticPrefab, ticTacContainer.transform);
-        NetworkServer.Spawn(ticTac);
-        RpcSetBlockParent(ticTac);
+        //ticTac = Instantiate(ticPrefab, ticTacContainer.transform);
+        //NetworkServer.Spawn(ticTac);
+        //RpcSetBlockParent(ticTac);
     }
 
     [ClientRpc] // Serveur au client

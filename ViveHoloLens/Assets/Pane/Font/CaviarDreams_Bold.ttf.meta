@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: fb2593f08116cb9408006736e49fe8e0
+timeCreated: 1517824731
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Caviar Dreams
+  fontNames:
+  - Caviar Dreams
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6452810a79e2ecd4484c5a20671a80e7, type: 3}
+  - {fileID: 12800000, guid: 583de49cbcf22ab46ac8e0bb7f820afc, type: 3}
+  - {fileID: 12800000, guid: adb4696fcf7ab6743963ed4a50a97675, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

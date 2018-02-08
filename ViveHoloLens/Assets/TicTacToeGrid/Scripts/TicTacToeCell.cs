@@ -21,6 +21,10 @@ public class TicTacToeCell : MonoBehaviour
     [HideInInspector]
     public int CellValue { get; set; }// The cell's value
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other">The collided GameObject</param>
     void OnTriggerEnter(Collider other)
     {
         // +1 for PalyerA  -1 for PlayerB

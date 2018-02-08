@@ -72,9 +72,19 @@ public class LineManager : NetworkBehaviour
     {
         if (!isDrawing)
         {
+            HideControllerMsg();
             CmdStartDrawing();
         }
     }
+
+    private void HideControllerMsg()
+    {
+        if (player.CanDraw)
+        {
+            player.HideMessage();
+        }
+    }
+
     /// <summary>
     /// 
     /// </summary>
